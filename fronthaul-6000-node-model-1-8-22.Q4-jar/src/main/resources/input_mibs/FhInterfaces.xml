@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Copyright (c) 2022 Ericsson AB.
+	All rights reserved
+
+	FronthaulInterfaces
+-->
+<!DOCTYPE models SYSTEM "mp.dtd">
+<models>
+    <dtdVersion>A</dtdVersion>
+    <momMetaData>
+        <momTitle>FronthaulInterfaces</momTitle>
+        <momSubTitle>Interfaces</momSubTitle>
+        <momIdentity>
+            <docNum>0</docNum>
+            <docLang>English</docLang>
+            <docRev>0</docRev>
+            <docDate>date</docDate>
+        </momIdentity>
+    </momMetaData>
+    <mim author="EGIAAGO" contact="Giacomo Agostini" correction="0" date="2022-07-01" docNo="" name="FronthaulInterfaces"
+         namespace="urn:com:ericsson:ecim:FronthaulInterfaces" namespacePrefix="fh-if" organization="Optical&#38;FH" release="0" revision="0" version="1">
+        <description>
+            This model is used to export Fronthaul interface
+        </description>
+		<enum name="OperState">
+			<description>The operational states of a resource.</description>
+			<enumMember name="DISABLED">
+				<description>  The resource is  totally inoperable.</description>
+				<value>0</value>
+			</enumMember>
+			<enumMember name="ENABLED">
+				<description>The resource partially or fully operable.</description>
+				<value>1</value>
+			</enumMember>
+		</enum>
+        <class name="Interface">
+            <description>A class containing info about an optical Fronthaul interface</description>
+            <systemCreated/>
+            <root/>
+            <attribute name="name">
+                <description>The name of the interface.</description>
+                <mandatory/>
+				<noNotification/>
+				<restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="description">
+                <description>It is a short description of the interface.</description>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="mateInterface">
+                <description>Identity of remote interface facing this client interface</description>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="speed">
+                <description>It represents the max speed attribute of Interface</description>
+                <dataType>
+                    <int32/>
+                </dataType>
+            </attribute>
+            <attribute name="enabled">
+                <description>This attribute contains the configured, desired state of the interface</description>
+                <dataType>
+                    <boolean/>
+                </dataType>
+            </attribute>
+			<attribute name="operState">
+				<description>This attibute contains the operational state of this interface</description>
+				<readOnly/>
+				<isNillable/>
+				<dataType>
+				  <enumRef name="OperState">
+					<mimName>FronthaulInterfaces</mimName>
+				  </enumRef>
+				</dataType>
+			</attribute>			
+        </class>
+    </mim>
+    <interMim>
+        <relationship name="SystemFunctions_to_Interface">
+            <containment>
+                <parent>
+                    <hasClass name="SystemFunctions">
+                        <mimName>ComTop</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="Interface">
+                        <mimName>FronthaulInterfaces</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                    </cardinality>
+                </child>
+            </containment>
+        </relationship>
+    </interMim>
+</models>

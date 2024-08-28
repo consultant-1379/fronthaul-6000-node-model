@@ -1,0 +1,2445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE models SYSTEM "mp.dtd">
+<models>
+    <dtdVersion>G</dtdVersion>
+    <mib name="Pm_CXP9035658_2" release="0" version="1">
+        <object parentDn="Pm=1">
+            <hasClass name="PmMeasurementCapabilities">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="pmMeasurementCapabilitiesId">
+                <value>1</value>
+            </slot>
+            <slot name="maxNoOfJobs">
+                <value>3</value>
+            </slot>
+            <slot name="jobStartStopSupport">
+                <value>0</value>
+            </slot>
+            <slot name="finalROP">
+                <value>true</value>
+            </slot>
+            <slot name="jobPrioritizationSupport">
+                <value>false</value>
+            </slot>
+            <slot name="maxNoOfPmFiles">
+                <value>97</value>                        
+            </slot>
+            <slot name="measurementJobSupport">
+                <value>true</value>
+            </slot>
+            <slot name="realTimeJobSupport">
+                <value>false</value>                      
+            </slot>
+            <slot name="thresholdJobSupport">
+                <value>false</value>                      
+            </slot>
+            <slot name="fileLocation">
+                <value>/</value>             
+            </slot>
+            <slot name="supportedRopPeriods">
+                <seqValue>
+                    <value>5</value>
+                    <value>9</value>
+                </seqValue>
+            </slot>
+            <slot name="supportedMeasJobGps">
+                <seqValue>
+                    <value>5</value>
+                    <value>9</value>
+                </seqValue>
+            </slot>
+            <slot name="supportedCompressionTypes">
+                <seqValue>
+                    <value>0</value>               
+                </seqValue>
+            </slot>
+            <slot name="jobGroupingSupport">
+                <value>false</value>
+            </slot>
+            <slot name="producesUtcRopFiles">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1">
+            <hasClass name="PmGroup">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="pmGroupId">
+                <value>pmGroupUnitMeas</value>
+            </slot>
+            <slot name="validity">
+                <value>true</value>
+            </slot>
+            <slot name="description">
+                <value>pmGroupUnitMeas</value>
+            </slot>
+            <slot name="pmGroupVersion">
+                <value>1.0</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1">
+            <hasClass name="PmGroup">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="pmGroupId">
+                <value>pmGroupPortMeas</value>
+            </slot>
+            <slot name="validity">
+                <value>true</value>
+            </slot>
+            <slot name="description">
+                <value>pmGroupPortMeas</value>
+            </slot>
+            <slot name="pmGroupVersion">
+                <value>1.0</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>IOP_MIN</value>
+            </slot>
+            <slot name="measurementName">
+                <value>IOP_MIN</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Input optical power minimum</value>
+            </slot>
+            <slot name="condition">
+                <value>Input optical power minimum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MIN</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>dBm</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>IOP_MAX</value>
+            </slot>
+            <slot name="measurementName">
+                <value>IOP_MAX</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Input optical power maximum</value>
+            </slot>
+            <slot name="condition">
+                <value>Input optical power maximum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MAX</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>dBm</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>IOP_AVG</value>
+            </slot>
+            <slot name="measurementName">
+                <value>IOP_AVG</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Input optical power average</value>
+            </slot>
+            <slot name="condition">
+                <value>Input optical power average</value>
+            </slot>
+            <slot name="aggregation">
+                <value>AVG</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>dBm</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>OOP_MIN</value>
+            </slot>
+            <slot name="measurementName">
+                <value>OOP_MIN</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Output optical power minimum</value>
+            </slot>
+            <slot name="condition">
+                <value>Output optical power minimum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MIN</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>dBm</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>OOP_MAX</value>
+            </slot>
+            <slot name="measurementName">
+                <value>OOP_MAX</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Output optical power maximum</value>
+            </slot>
+            <slot name="condition">
+                <value>Output optical power maximum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MAX</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>dBm</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>OOP_AVG</value>
+            </slot>
+            <slot name="measurementName">
+                <value>OOP_AVG</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Output optical power average</value>
+            </slot>
+            <slot name="condition">
+                <value>Output optical power average</value>
+            </slot>
+            <slot name="aggregation">
+                <value>AVG</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>dBm</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>Line_PreFEC_BER_MIN</value>
+            </slot>
+            <slot name="measurementName">
+                <value>Line_PreFEC_BER_MIN</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Line PreFEC BER minimum</value>
+            </slot>
+            <slot name="condition">
+                <value>Line PreFEC BER minimum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MIN</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>Line_PreFEC_BER_MAX</value>
+            </slot>
+            <slot name="measurementName">
+                <value>Line_PreFEC_BER_MAX</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Line PreFEC BER maximum</value>
+            </slot>
+            <slot name="condition">
+                <value>Line PreFEC BER maximum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MAX</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>Line_PreFEC_BER_AVG</value>
+            </slot>
+            <slot name="measurementName">
+                <value>Line_PreFEC_BER_AVG</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Line PreFEC BER average</value>
+            </slot>
+            <slot name="condition">
+                <value>Line PreFEC BER average</value>
+            </slot>
+            <slot name="aggregation">
+                <value>AVG</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>ING_CLIENT_BER_8B10B_MIN</value>
+            </slot>
+            <slot name="measurementName">
+                <value>ING_CLIENT_BER_8B10B_MIN</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>INGRESS CLIENT BER 8B10B minimum</value>
+            </slot>
+            <slot name="condition">
+                <value>INGRESS CLIENT BER 8B10B minimum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MIN</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>ING_CLIENT_BER_8B10B_MAX</value>
+            </slot>
+            <slot name="measurementName">
+                <value>ING_CLIENT_BER_8B10B_MAX</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>INGRESS CLIENT BER 8B10B maximum</value>
+            </slot>
+            <slot name="condition">
+                <value>INGRESS CLIENT BER 8B10B maximum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MAX</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>ING_CLIENT_BER_8B10B_AVG</value>
+            </slot>
+            <slot name="measurementName">
+                <value>ING_CLIENT_BER_8B10B_AVG</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>INGRESS CLIENT BER 8B10B average</value>
+            </slot>
+            <slot name="condition">
+                <value>INGRESS CLIENT BER 8B10B average</value>
+            </slot>
+            <slot name="aggregation">
+                <value>AVG</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>EGR_CLIENT_BER_8B10B_MIN</value>
+            </slot>
+            <slot name="measurementName">
+                <value>EGR_CLIENT_BER_8B10B_MIN</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>EGRESS CLIENT BER 8B10B minimum</value>
+            </slot>
+            <slot name="condition">
+                <value>EGRESS CLIENT BER 8B10B minimum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MIN</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>EGR_CLIENT_BER_8B10B_MAX</value>
+            </slot>
+            <slot name="measurementName">
+                <value>EGR_CLIENT_BER_8B10B_MAX</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>EGRESS CLIENT BER 8B10B maximum</value>
+            </slot>
+            <slot name="condition">
+                <value>EGRESS CLIENT BER 8B10B maximum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MAX</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>EGR_CLIENT_BER_8B10B_AVG</value>
+            </slot>
+            <slot name="measurementName">
+                <value>EGR_CLIENT_BER_8B10B_AVG</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>EGRESS CLIENT BER 8B10B average</value>
+            </slot>
+            <slot name="condition">
+                <value>EGRESS CLIENT BER 8B10B average</value>
+            </slot>
+            <slot name="aggregation">
+                <value>AVG</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>ING_CLIENT_HIBER_64B66B</value>
+            </slot>
+            <slot name="measurementName">
+                <value>ING_CLIENT_HIBER_64B66B</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>CC</value>
+            </slot>
+            <slot name="description">
+                <value>INGRESS CLIENT HIBER 64B66B</value>
+            </slot>
+            <slot name="condition">
+                <value>INGRESS CLIENT HIBER 64B66B</value>
+            </slot>
+            <slot name="aggregation">
+                <value>SUM</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>EGR_CLIENT_HIBER_64B66B</value>
+            </slot>
+            <slot name="measurementName">
+                <value>EGR_CLIENT_HIBER_64B66B</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>CC</value>
+            </slot>
+            <slot name="description">
+                <value>EGRESS CLIENT HIBER 64B66B</value>
+            </slot>
+            <slot name="condition">
+                <value>EGRESS CLIENT HIBER 64B66B</value>
+            </slot>
+            <slot name="aggregation">
+                <value>SUM</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>LASER_BIAS_CURRENT_MAX</value>
+            </slot>
+            <slot name="measurementName">
+                <value>LASER_BIAS_CURRENT_MAX</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Laser Bias Current maximum</value>
+            </slot>
+            <slot name="condition">
+                <value>Laser Bias Current maximum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MAX</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>mA</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>LASER_BIAS_CURRENT_MIN</value>
+            </slot>
+            <slot name="measurementName">
+                <value>LASER_BIAS_CURRENT_MIN</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Laser Bias Current minimum</value>
+            </slot>
+            <slot name="condition">
+                <value>Laser Bias Current minimum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MIN</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>mA</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>LASER_BIAS_CURRENT_AVG</value>
+            </slot>
+            <slot name="measurementName">
+                <value>LASER_BIAS_CURRENT_AVG</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Laser Bias Current average</value>
+            </slot>
+            <slot name="condition">
+                <value>Laser Bias Current average</value>
+            </slot>
+            <slot name="aggregation">
+                <value>AVG</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>mA</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>LASER_TEMP_MAX</value>
+            </slot>
+            <slot name="measurementName">
+                <value>LASER_TEMP_MAX</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Laser Temp maximum</value>
+            </slot>
+            <slot name="condition">
+                <value>Laser Temp maximum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MAX</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>C</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>LASER_TEMP_MIN</value>
+            </slot>
+            <slot name="measurementName">
+                <value>LASER_TEMP_MIN</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Laser Temp minimum</value>
+            </slot>
+            <slot name="condition">
+                <value>Laser Temp minimum</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MIN</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>C</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>LASER_TEMP_AVG</value>
+            </slot>
+            <slot name="measurementName">
+                <value>LASER_TEMP_AVG</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Laser Temp average</value>
+            </slot>
+            <slot name="condition">
+                <value>Laser Temp average</value>
+            </slot>
+            <slot name="aggregation">
+                <value>AVG</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>C</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupPortMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>Line_UNCORR_SUBFRAMES</value>
+            </slot>
+            <slot name="measurementName">
+                <value>Line_UNCORR_SUBFRAMES</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>CC</value>
+            </slot>
+            <slot name="description">
+                <value>Line uncorrectable subframes</value>
+            </slot>
+            <slot name="condition">
+                <value>Line uncorrectable subframes</value>
+            </slot>
+            <slot name="aggregation">
+                <value>SUM</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1">
+            <hasClass name="PmJob">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="pmJobId">
+                <value>PRIMARY15MIN</value>
+            </slot>
+            <slot name="requestedJobState">
+                <value>1</value>
+            </slot>
+            <slot name="reportingPeriod">
+                <value>5</value>
+            </slot>
+            <slot name="jobType">
+                <value>1</value>
+            </slot>
+            <slot name="granularityPeriod">
+                <value>5</value>
+            </slot>
+            <slot name="currentJobState">
+                <value>1</value>
+            </slot>
+            <slot name="jobControl">
+                <value>1</value>
+            </slot>
+            <slot name="compressionType">
+                <value>0</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1">
+            <hasClass name="PmJob">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="pmJobId">
+                <value>PRIMARY24H</value>
+            </slot>
+            <slot name="requestedJobState">
+                <value>1</value>
+            </slot>
+            <slot name="reportingPeriod">
+                <value>9</value>
+            </slot>
+            <slot name="jobType">
+                <value>1</value>
+            </slot>
+            <slot name="granularityPeriod">
+                <value>9</value>
+            </slot>
+            <slot name="currentJobState">
+                <value>1</value>
+            </slot>
+            <slot name="jobControl">
+                <value>1</value>
+            </slot>
+            <slot name="compressionType">
+                <value>0</value>
+            </slot>
+        </object>
+        <!--Power Consumption-->
+        <object parentDn="Pm=1,PmGroup=pmGroupUnitMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>pmPowerConsumption</value>
+            </slot>
+            <slot name="measurementName">
+                <value>pmPowerConsumption</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Power Consumption</value>
+            </slot>
+            <slot name="condition">
+                <value>Power Consumption</value>
+            </slot>
+            <slot name="aggregation">
+                <value>SUM</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>W</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>150</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupUnitMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>pmMinPowerConsumption</value>
+            </slot>
+            <slot name="measurementName">
+                <value>pmMinPowerConsumption</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Minimum Power Consumption</value>
+            </slot>
+            <slot name="condition">
+                <value>Minimum Power Consumption</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MIN</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>W</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupUnitMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>pmMaxPowerConsumption</value>
+            </slot>
+            <slot name="measurementName">
+                <value>pmMaxPowerConsumption</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Maximum Power Consumption</value>
+            </slot>
+            <slot name="condition">
+                <value>Maximum Power Consumption</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MAX</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>W</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupUnitMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>pmAvgPowerConsumption</value>
+            </slot>
+            <slot name="measurementName">
+                <value>pmAvgPowerConsumption</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Average Power Consumption</value>
+            </slot>
+            <slot name="condition">
+                <value>Average Power Consumption</value>
+            </slot>
+            <slot name="aggregation">
+                <value>AVG</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>W</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <!--Voltage-->
+        <object parentDn="Pm=1,PmGroup=pmGroupUnitMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>pmVoltage</value>
+            </slot>
+            <slot name="measurementName">
+                <value>pmVoltage</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Voltage</value>
+            </slot>
+            <slot name="condition">
+                <value>Voltage</value>
+            </slot>
+            <slot name="aggregation">
+                <value>SUM</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>V</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>150</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupUnitMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>pmMinVoltage</value>
+            </slot>
+            <slot name="measurementName">
+                <value>pmMinVoltage</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Minimum Voltage</value>
+            </slot>
+            <slot name="condition">
+                <value>Minimum Voltage</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MIN</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>V</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupUnitMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>pmMaxVoltage</value>
+            </slot>
+            <slot name="measurementName">
+                <value>pmMaxVoltage</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Maximum Voltage</value>
+            </slot>
+            <slot name="condition">
+                <value>Maximum Voltage</value>
+            </slot>
+            <slot name="aggregation">
+                <value>MAX</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>V</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmGroup=pmGroupUnitMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>pmAvgVoltage</value>
+            </slot>
+            <slot name="measurementName">
+                <value>pmAvgVoltage</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>GAUGE</value>
+            </slot>
+            <slot name="description">
+                <value>Average Voltage</value>
+            </slot>
+            <slot name="condition">
+                <value>Average Voltage</value>
+            </slot>
+            <slot name="aggregation">
+                <value>AVG</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>V</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <!--Energy Consumed-->
+        <object parentDn="Pm=1,PmGroup=pmGroupUnitMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>pmConsumedEnergy</value>
+            </slot>
+            <slot name="measurementName">
+                <value>pmConsumedEnergy</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>CC</value>
+            </slot>
+            <slot name="description">
+                <value>Energy consumed</value>
+            </slot>
+            <slot name="condition">
+                <value>Energy consumed</value>
+            </slot>
+            <slot name="aggregation">
+                <value>SUM</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>Wh</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <!--Energy Consumed ACC-->
+        <object parentDn="Pm=1,PmGroup=pmGroupUnitMeas">
+            <hasClass name="MeasurementType">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementTypeId">
+                <value>pmConsumedEnergyAccumulated</value>
+            </slot>
+            <slot name="measurementName">
+                <value>pmConsumedEnergyAccumulated</value>
+            </slot>
+            <slot name="size">
+                <value>4</value>
+            </slot>
+            <slot name="collectionMethod">
+                <value>CC</value>
+            </slot>
+            <slot name="description">
+                <value>Energy consumed accumulated</value>
+            </slot>
+            <slot name="condition">
+                <value>Energy consumed accumulated</value>
+            </slot>
+            <slot name="aggregation">
+                <value>SUM</value>
+            </slot>
+            <slot name="measurementStatus">
+                <value>USED</value>
+            </slot>
+            <slot name="measurementResult">
+                <value>Wh</value>
+            </slot>
+            <slot name="multiplicity">
+                <value>1</value>
+            </slot>
+            <slot name="isCompressed">
+                <value>false</value>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>IOP_MIN_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=IOP_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>IOP_MAX_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=IOP_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>IOP_AVG_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=IOP_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>OOP_MIN_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=OOP_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>OOP_MAX_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=OOP_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>OOP_AVG_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=OOP_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>Line_PreFEC_BER_MIN_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=Line_PreFEC_BER_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>Line_PreFEC_BER_MAX_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=Line_PreFEC_BER_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>Line_PreFEC_BER_AVG_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=Line_PreFEC_BER_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>ING_CLIENT_BER_8B10B_MIN_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=ING_CLIENT_BER_8B10B_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>ING_CLIENT_BER_8B10B_MAX_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=ING_CLIENT_BER_8B10B_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>ING_CLIENT_BER_8B10B_AVG_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=ING_CLIENT_BER_8B10B_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>EGR_CLIENT_BER_8B10B_MIN_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=EGR_CLIENT_BER_8B10B_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>EGR_CLIENT_BER_8B10B_MAX_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=EGR_CLIENT_BER_8B10B_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>EGR_CLIENT_BER_8B10B_AVG_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=EGR_CLIENT_BER_8B10B_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>ING_CLIENT_HIBER_64B66B_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=ING_CLIENT_HIBER_64B66B</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>EGR_CLIENT_HIBER_64B66B_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=EGR_CLIENT_HIBER_64B66B</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_BIAS_CURRENT_MAX_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_BIAS_CURRENT_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_BIAS_CURRENT_MIN_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_BIAS_CURRENT_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_BIAS_CURRENT_AVG_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_BIAS_CURRENT_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_TEMP_MAX_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_TEMP_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_TEMP_MIN_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_TEMP_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_TEMP_AVG_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_TEMP_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>Line_UNCORR_SUBFRAMES_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=Line_UNCORR_SUBFRAMES</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <!--Power Consumption-->
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmPowerConsumption_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmPowerConsumption</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmMinPowerConsumption_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmMinPowerConsumption</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmMaxPowerConsumption_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmMaxPowerConsumption</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmAvgPowerConsumption_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmAvgPowerConsumption</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <!--Voltage-->
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmVoltage_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmVoltage</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmMinVoltage_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmMinVoltage</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmMaxVoltage_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmMaxVoltage</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmAvgVoltage_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmAvgVoltage</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <!--Energy Consumed-->
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmConsumedEnergy_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmConsumedEnergy</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <!--Energy Consumed ACC-->
+        <object parentDn="Pm=1,PmJob=PRIMARY15MIN">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmConsumedEnergyAccumulated_15m</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmConsumedEnergyAccumulated</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>IOP_MIN_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=IOP_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>IOP_MAX_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=IOP_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>IOP_AVG_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=IOP_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>OOP_MIN_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=OOP_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>OOP_MAX_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=OOP_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>OOP_AVG_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=OOP_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>Line_PreFEC_BER_MIN_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=Line_PreFEC_BER_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>Line_PreFEC_BER_MAX_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=Line_PreFEC_BER_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>Line_PreFEC_BER_AVG_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=Line_PreFEC_BER_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>ING_CLIENT_BER_8B10B_MIN_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=ING_CLIENT_BER_8B10B_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>ING_CLIENT_BER_8B10B_MAX_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=ING_CLIENT_BER_8B10B_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>ING_CLIENT_BER_8B10B_AVG_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=ING_CLIENT_BER_8B10B_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>EGR_CLIENT_BER_8B10B_MIN_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=EGR_CLIENT_BER_8B10B_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>EGR_CLIENT_BER_8B10B_MAX_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=EGR_CLIENT_BER_8B10B_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>EGR_CLIENT_BER_8B10B_AVG_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=EGR_CLIENT_BER_8B10B_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>ING_CLIENT_HIBER_64B66B_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=ING_CLIENT_HIBER_64B66B</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>EGR_CLIENT_HIBER_64B66B_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=EGR_CLIENT_HIBER_64B66B</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_BIAS_CURRENT_MAX_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_BIAS_CURRENT_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_BIAS_CURRENT_MIN_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_BIAS_CURRENT_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_BIAS_CURRENT_AVG_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_BIAS_CURRENT_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_TEMP_MAX_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_TEMP_MAX</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_TEMP_MIN_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_TEMP_MIN</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>LASER_TEMP_AVG_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=LASER_TEMP_AVG</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>Line_UNCORR_SUBFRAMES_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupPortMeas,MeasurementType=Line_UNCORR_SUBFRAMES</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <!--Power Consumption-->
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmPowerConsumption_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmPowerConsumption</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmMinPowerConsumption_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmMinPowerConsumption</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmMaxPowerConsumption_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmMaxPowerConsumption</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmAvgPowerConsumption_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmAvgPowerConsumption</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <!--Voltage-->
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmVoltage_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmVoltage</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmMinVoltage_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmMinVoltage</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmMaxVoltage_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmMaxVoltage</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmAvgVoltage_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmAvgVoltage</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <!--Energy Consumed-->
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmConsumedEnergy_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmConsumedEnergy</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+        <!--Energy Consumed ACC-->
+        <object parentDn="Pm=1,PmJob=PRIMARY24H">
+            <hasClass name="MeasurementReader">
+                <mimName>ECIM_PM</mimName>
+            </hasClass>
+            <slot name="measurementReaderId">
+                <value>pmConsumedEnergyAccumulated_24h</value>
+            </slot>
+            <slot name="measurementSpecification">
+                <complexValue>
+                    <slot name="measurementTypeRef">
+                        <value>ManagedElement=1,SystemFunctions=1,Pm=1,PmGroup=pmGroupUnitMeas,MeasurementType=pmConsumedEnergyAccumulated</value>
+                    </slot>
+                </complexValue>
+            </slot>
+        </object>
+    </mib>
+</models>

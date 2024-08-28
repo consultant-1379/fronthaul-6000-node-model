@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (c) 2022 Ericsson AB.
+    All rights reserved
+
+    FronthaulInterfaces
+-->
+<!DOCTYPE models SYSTEM "mp.dtd">
+<models>
+    <dtdVersion>A</dtdVersion>
+    <momMetaData>
+        <momTitle>ngfh-equipment</momTitle>
+        <momSubTitle>Equipment</momSubTitle>
+        <momIdentity>
+            <docNum>0</docNum>
+            <docLang>English</docLang>
+            <docRev>0</docRev>
+            <docDate>date</docDate>
+        </momIdentity>
+    </momMetaData>
+    <mim author="EGIAAGO" contact="Giacomo Agostini" correction="0" date="2023-08-29" docNo="" name="ngfh-equipment"
+         namespace="urn:com:ericsson:ecim:ngfh-equipment"
+         namespacePrefix="fh-eqp" organization="Optical&#38;FH" release="0" revision="0" version="1">
+        <description>
+            This model is used to export Fronthaul equipment.
+        </description>
+        <class name="equipment">
+            <description>A class containing info about an optical Fronthaul interface.</description>
+            <systemCreated/>
+            <root/>
+            <attribute name="equipment-id">
+                <description>The id of the node.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+        </class>
+    </mim>
+    <interMim>
+        <relationship name="ManagedElement_to_equipment">
+            <containment>
+                <parent>
+                    <hasClass name="ManagedElement">
+                        <mimName>ComTop</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="equipment">
+                        <mimName>ngfh-equipment</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>1</min>
+                    </cardinality>
+                </child>
+            </containment>
+        </relationship>
+    </interMim>
+</models>

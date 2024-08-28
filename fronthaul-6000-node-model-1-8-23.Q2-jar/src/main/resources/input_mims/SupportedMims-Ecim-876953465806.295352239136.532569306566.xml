@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagementInformationModelInformation
+  oss_common:ns="FRONTHAUL-6000" oss_common:name="SupportedMims-Ecim"
+  oss_common:version="876953465806.295352239136.532569306566" xmlns="urn:com:ericsson:schema:xml:oss:cfm_miminfo"
+  xmlns:oss_common="urn:com:ericsson:schema:xml:oss:oss_common"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="urn:com:ericsson:schema:xml:oss:cfm_miminfo cfm_miminfo.xsd ">
+
+  <oss_common:modelCreationInfo author="BlackBox"
+    creationDate="24/05/2023">
+    <oss_common:designedModel componentId="fronthaul-6000-node-model-1-8-23.Q2-jar" />
+  </oss_common:modelCreationInfo>
+
+  <oss_common:desc>This is the MIM Info model for Network Element type="FRONTHAUL-6000" for 22.Q4
+  </oss_common:desc>
+
+  <supportedMims>
+
+    <mimMappedTo namespace="ComFm" version="12.0.0"
+      referenceMimNamespace="ECIM_FM" referenceMimVersion="4.0.0" />
+
+    <mimMappedTo namespace="ComSysM" version="3.2.3"
+      referenceMimNamespace="ECIM_SysM" referenceMimVersion="3.2.0" />
+
+    <mimMappedTo namespace="ComTop" version="10.10.1"
+
+      referenceMimNamespace="ECIM_Top" referenceMimVersion="2.1.0" />
+
+  </supportedMims>
+</ManagementInformationModelInformation>
+

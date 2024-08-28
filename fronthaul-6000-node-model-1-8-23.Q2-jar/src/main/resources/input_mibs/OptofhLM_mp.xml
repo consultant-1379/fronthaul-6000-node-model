@@ -1,0 +1,2334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Copyright (c) 2021 Ericsson AB.
+	All rights reserved
+
+	DX ECIM Tool-chain generated this file on Oct 14, 2021 7:49:55 PM using:
+	* com.ericsson.ecim.m2m 2.22.0.202007291315
+	* com.ericsson.ecim.dsl 2.22.0.202007291315
+	* com.ericsson.ecim.edm 2.22.0.202007291315
+--><!DOCTYPE models SYSTEM "mp.dtd">
+<models>
+    <dtdVersion>K</dtdVersion>
+    <momMetaData>
+        <momTitle>ECIM License Management</momTitle>
+        <momSubTitle/>
+        <momIdentity>
+            <docNum>0</docNum>
+            <docLang>English</docLang>
+            <docRev>0</docRev>
+            <docDate>2021-10-14</docDate>
+        </momIdentity>
+        <createdBy>
+            <signature>IMF</signature>
+        </createdBy>
+    </momMetaData>
+    <mim author="IMF" contact="IMF" correction="0" date="2023-05-09" docNo="" name="OPTOFH_LM" namespace="urn:com:ericsson:ecim:OPTOFH_LM" namespacePrefix="opto_ecim_lm" organization="IMF" release="0" revision="0" version="1">
+        <description>ECIM License Management model fragment.</description>
+        <domainExtension domain="ECIM">
+            <extension name="ecimMomName" value="ECIM_LM"/>
+            <extension name="ecimMomVersion" value="3"/>
+            <extension name="ecimMomRelease" value="5"/>
+            <extension name="ecimMomCorrection" value="0"/>
+        </domainExtension>
+        <implements correction="0" name="ECIM_LM" release="5" version="3"/>
+        <struct name="AsyncActionProgress">
+            <description>Records the progress of an asynchronous action.</description>
+            <domainExtension domain="ECIM">
+                <extension name="originatingMimVersion" value="2"/>
+                <extension name="originatingMimRelease" value="7"/>
+                <extension name="originatingMimName" value="ECIM_CommonLibrary"/>
+            </domainExtension>
+            <structMember name="actionName">
+                <description>Name of the invoked asynchronous action.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <string/>
+            </structMember>
+            <structMember name="additionalInfo">
+                <description>Used for logging significant messages during execution of an action.</description>
+                <sequence>
+                    <string/>
+                    <minLength>0</minLength>
+                </sequence>
+            </structMember>
+            <structMember name="progressInfo">
+                <description>Textual information that describes the actual state of the action execution.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <string/>
+            </structMember>
+            <structMember name="progressPercentage">
+                <description>Progress of the action.
+                    The range is between 0 and 100.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <uint8/>
+            </structMember>
+            <structMember name="result">
+                <description>Result state of a completed action.
+                    This field has value NOT_AVAILABLE if the action is not finished.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <enumRef name="ActionResultType">
+                    <mimName>OPTOFH_LM</mimName>
+                </enumRef>
+            </structMember>
+            <structMember name="resultInfo">
+                <description>Textual description of the outcome/result of the action containing useful information for the NMS.
+                    If the action failed, it can contain an error message.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <string/>
+            </structMember>
+            <structMember name="state">
+                <description>Current state of the action.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <enumRef name="ActionStateType">
+                    <mimName>OPTOFH_LM</mimName>
+                </enumRef>
+            </structMember>
+            <structMember name="actionId">
+                <description>Uniquely identifies the invocation of an action.
+                    Identifies the invocation of an action when the managed object allows invocation of more than one action at a time.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isKey" value="true"/>
+                </domainExtension>
+                <derivedDataTypeRef name="ActionInvocationResult">
+                    <mimName>OPTOFH_LM</mimName>
+                </derivedDataTypeRef>
+            </structMember>
+            <structMember name="timeActionStarted">
+                <description>Date and time when the current action was started.</description>
+                <derivedDataTypeRef name="DateTime">
+                    <mimName>OPTOFH_LM</mimName>
+                </derivedDataTypeRef>
+            </structMember>
+            <structMember name="timeActionCompleted">
+                <description>Date and time when the action was completed (successfully or unsuccessfully).</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <derivedDataTypeRef name="DateTime">
+                    <mimName>OPTOFH_LM</mimName>
+                </derivedDataTypeRef>
+            </structMember>
+            <structMember name="timeOfLastStatusUpdate">
+                <description>Date and time when the struct member state was last updated.</description>
+                <derivedDataTypeRef name="DateTime">
+                    <mimName>OPTOFH_LM</mimName>
+                </derivedDataTypeRef>
+            </structMember>
+        </struct>
+        <struct name="LmCapacityValue">
+            <description>Defines a capacity value.</description>
+            <structMember name="value">
+                <description>The capacity value.&#13;
+                    &#13;
+                    The value is invalid if "noLimit=true".</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <int32/>
+            </structMember>
+            <structMember name="noLimit">
+                <description>True if the value is unlimited, false if the value is defined by attribute "value".</description>
+                <boolean>
+                    <defaultValue>false</defaultValue>
+                </boolean>
+            </structMember>
+        </struct>
+        <enum name="LmServiceState">
+            <description>Whether a certain service is operable or not based on license and feature states.</description>
+            <enumMember name="INOPERABLE">
+                <value>0</value>
+            </enumMember>
+            <enumMember name="OPERABLE">
+                <value>1</value>
+            </enumMember>
+        </enum>
+        <enum name="LmFeatureState">
+            <description>Indicates whether or not a certain feature is administratively activated.</description>
+            <enumMember name="DEACTIVATED">
+                <value>0</value>
+            </enumMember>
+            <enumMember name="ACTIVATED">
+                <value>1</value>
+            </enumMember>
+        </enum>
+        <enum name="LmLicenseState">
+            <description>The license state of a resource.</description>
+            <enumMember name="DISABLED">
+                <description>No valid license available for the feature or capacity.</description>
+                <value>0</value>
+            </enumMember>
+            <enumMember name="ENABLED">
+                <description>Valid license available for the feature or capacity.</description>
+                <value>1</value>
+            </enumMember>
+            <enumMember name="ENTITLED">
+                <description>License eligible for use and can be activated by Instantaneous Licensing.</description>
+                <value>2</value>
+            </enumMember>
+        </enum>
+        <enum name="AdmState">
+            <description>Administrative state of a resource.</description>
+            <domainExtension domain="ECIM">
+                <extension name="originatingMimVersion" value="2"/>
+                <extension name="originatingMimRelease" value="7"/>
+                <extension name="originatingMimName" value="ECIM_CommonLibrary"/>
+            </domainExtension>
+            <enumMember name="LOCKED">
+                <description>The resource is administratively prohibited from performing services for its users.</description>
+                <value>0</value>
+            </enumMember>
+            <enumMember name="UNLOCKED">
+                <description>The resource is administratively permitted to perform services for its users.
+                    This is independent of its inherent operability.</description>
+                <value>1</value>
+            </enumMember>
+            <enumMember name="SHUTTINGDOWN">
+                <description>Use of the resource is administratively permitted to existing instances of use only.
+                    While the system remains in the shutting down state the manager may at any time cause the managed object to revert to the locked state.</description>
+                <value>2</value>
+            </enumMember>
+        </enum>
+        <enum name="LmState">
+            <description>Operational modes of the License Manager.</description>
+            <enumMember name="LOCKED">
+                <description>No key file is available for the License Manager, so license requests are rejected.</description>
+                <value>0</value>
+            </enumMember>
+            <enumMember name="NORMAL">
+                <description>Key file is available for the License Manager, so license requests are granted accordingly.</description>
+                <value>1</value>
+            </enumMember>
+            <enumMember name="INTEGRATION_UNLOCK">
+                <description>All license requests are granted until first key file is delivered.&#13;
+                    &#13;
+                    The maximum duration the License Manager can function in this operational mode is pre-defined. When maximum duration expires and no other unlock applies, the License Manager goes into LOCKED operational state.</description>
+                <value>2</value>
+            </enumMember>
+            <enumMember name="MAINTENANCE_UNLOCK">
+                <description>All license requests are granted for maintenance purposes.&#13;
+                    &#13;
+                    The maximum duration the License Manager can function in this operational state is pre-defined. When maximum duration expires and no other unlock applies, the License Manager goes into LOCKED operational state.</description>
+                <value>3</value>
+            </enumMember>
+            <enumMember name="EMERGENCY_UNLOCK">
+                <description>All license requests are granted due to an emergency situation.&#13;
+                    &#13;
+                    The maximum duration the License Manager can function in this operational state is pre-defined. When maximum duration expires and no other unlock applies, the License Manager goes into LOCKED operational state.</description>
+                <value>4</value>
+            </enumMember>
+            <enumMember name="AUTONOMOUS_MODE">
+                <description>The key file is not accessible and license requests are granted based on cached license information.&#13;
+                    &#13;
+                    The maximum duration the License Manager can function in this operational state is pre-defined. When maximum duration expires and no unlock state applies, the License Manager goes into LOCKED operational state.</description>
+                <value>5</value>
+            </enumMember>
+            <enumMember name="SYSTEM_TRIGGERED_UNLOCK">
+                <description>SYSTEM_TRIGGERED_UNLOCK.&#13;
+                    &#13;
+                    All license requests are granted due to unlock state being triggered by some event in the License Manager.&#13;
+                    &#13;
+                    The maximum duration the License Manager can function in this operational state is pre-defined.</description>
+                <value>6</value>
+            </enumMember>
+        </enum>
+        <enum name="LmArwaProxyServerType">
+            <description>Proxy server type for Cloud/ARWA.</description>
+            <enumMember name="MANUAL">
+                <description>MANUAL.&#13;
+                    &#13;
+                    The proxy's IP address and port are specified directly.</description>
+                <value>0</value>
+            </enumMember>
+        </enum>
+        <enum name="LmArwaServerConnectionType">
+            <description>Type of server connection for the Cloud system.</description>
+            <enumMember name="PERMANENT">
+                <description>&#13;
+                    PERMANENT.&#13;
+                    &#13;
+                    When LM is installed in Arwa permanent connection mode, application license keys are stored in the Arwa license repository.</description>
+                <value>1</value>
+            </enumMember>
+            <enumMember name="INTERMITTENT">
+                <description>INTERMITTENT.&#13;
+                    In Arwa intermittent connection type the ME connects to Arwa at either scheduled pre-determined times (for example, monthly) or manually via an ECIM action.&#13;
+                    In intermittent connection type the connectivity to Arwa is assumed to be intermittent.</description>
+                <value>2</value>
+            </enumMember>
+        </enum>
+        <enum name="NeLSConnectionStatus">
+            <description>Connection Status for NeLS.</description>
+            <enumMember name="UNDEFINED">
+                <description>Enum value represents initial state before connection attempt to NeLS.</description>
+                <value>0</value>
+            </enumMember>
+            <enumMember name="CONNECTED">
+                <description>Enum value represents connection towards NeLS is established.</description>
+                <value>1</value>
+            </enumMember>
+            <enumMember name="NOT_CONNECTED">
+                <description>Enum value represents connection towards NeLS is not established.</description>
+                <value>2</value>
+            </enumMember>
+        </enum>
+        <enum name="LmActivationState">
+            <description>Operational modes activation states and License Manager grace period.</description>
+            <enumMember name="INACTIVE">
+                <description>The operational mode or grace period is inactive.</description>
+                <value>0</value>
+            </enumMember>
+            <enumMember name="ACTIVATED">
+                <description>The operational mode or grace period is activated.</description>
+                <value>1</value>
+            </enumMember>
+            <enumMember name="ACTIVATED_EXPIRING">
+                <description>The operational mode or grace period is about to expire.</description>
+                <value>2</value>
+            </enumMember>
+            <enumMember name="EXPIRED">
+                <description>The operational mode or grace period has expired.&#13;
+                    &#13;
+                    Note: The state is not applicable to all operational modes.</description>
+                <value>3</value>
+            </enumMember>
+        </enum>
+        <enum name="ActionStateType">
+            <description>Lists the action states.</description>
+            <domainExtension domain="ECIM">
+                <extension name="originatingMimVersion" value="2"/>
+                <extension name="originatingMimRelease" value="7"/>
+                <extension name="originatingMimName" value="ECIM_CommonLibrary"/>
+            </domainExtension>
+            <enumMember name="CANCELLING">
+                <description>Cancellation is in progress.</description>
+                <value>1</value>
+            </enumMember>
+            <enumMember name="RUNNING">
+                <description>The execution of the action is currently in progress.</description>
+                <value>2</value>
+            </enumMember>
+            <enumMember name="FINISHED">
+                <description>The action is finished.</description>
+                <value>3</value>
+            </enumMember>
+            <enumMember name="CANCELLED">
+                <description>The action has been cancelled and cancellation has been done.</description>
+                <value>4</value>
+            </enumMember>
+        </enum>
+        <enum name="ActionResultType">
+            <description>Lists the different results of an action.</description>
+            <domainExtension domain="ECIM">
+                <extension name="originatingMimVersion" value="2"/>
+                <extension name="originatingMimRelease" value="7"/>
+                <extension name="originatingMimName" value="ECIM_CommonLibrary"/>
+            </domainExtension>
+            <enumMember name="SUCCESS">
+                <description>The asynchronous action ended with success.</description>
+                <value>1</value>
+            </enumMember>
+            <enumMember name="FAILURE">
+                <description>The asynchronous action ended with failure.</description>
+                <value>2</value>
+            </enumMember>
+            <enumMember name="NOT_AVAILABLE">
+                <description>No result is available yet.</description>
+                <value>3</value>
+            </enumMember>
+        </enum>
+        <derivedDataType name="IpDNSAddress">
+            <description>The IpDNSAddress type represents an IP address or a DNS domain name.&#13;
+                &#13;
+                A unicast IPv4 address is presented in three-digit decimal blocks. It is specified in dotted-quad decimal notation (i.e. three-digit decimal blocks) in accordance with RFC791, The blocks are separated by a dot.&#13;
+                - The unicast IPV4  address is within range [1-126,128-223].[0-255].[0-255].[0-255], 7-15 characters.&#13;
+                - The IP address range 127.0.0.0 – 127.255.255.255 is reserved for loopback&#13;
+                - The IP address range 0– 0.255.255.255 are reserved&#13;
+                - The IP address range 169.254.1.0 - 169.254.254.255 is used for link-local addresses.&#13;
+                &#13;
+                An  IPv6 address is specified by 8 groups of 16 bit hexadecimal values separated by colons as described in RFC 4291. If multiple consecutive groups contain only zeros, the use of "::" indicates one or more groups of 16 bits of zeros, as described in RFC 4291, section 2.2 bullet 2. A link-local address will have prefix fe80::/10. The format of the embedded IPv4/IPv6 addresses is described in RFC 6052.&#13;
+                - IPv6 minimum length = 3 and maximum length = 39.&#13;
+                - Valid characters: 0123456789abcdefABCDEF:&#13;
+                &#13;
+                A domain name is specified in dot separated alphanumeric notation  as described in RFC 1034. The domain name consists of one or more parts, called labels, that are delimited by dots.&#13;
+                - Domain Name's length: 253 characters&#13;
+                - Label's length: 63 characters.&#13;
+                - Valid characters: a-z, A-Z, 0,1,2,3,4,5,6,7,8,9,-&#13;
+                - The Label’s first character is a letter.&#13;
+                - Labels shall not start or end with a hyphen.&#13;
+                - Labels shall not start with a numbers&#13;
+                - Labels shall end with a number or a letter.</description>
+            <domainExtension domain="ECIM">
+                <extension name="originatingMimVersion" value="2"/>
+                <extension name="originatingMimRelease" value="7"/>
+                <extension name="originatingMimName" value="ECIM_CommonLibrary"/>
+            </domainExtension>
+            <baseType>
+                <string>
+                    <lengthRange>
+                        <min>1</min>
+                        <max>253</max>
+                    </lengthRange>
+                    <stringLength>
+                        <subrange>
+                            <min>1</min>
+                            <max>253</max>
+                        </subrange>
+                    </stringLength>
+                    <validValues>^((([1-9]|[1-9][0-9]|12[012345689]|1[013456789][0-9]|2[0-1][0-9]|22[0-3])\.)(([0-9]|[0-9][0-9]|[0-1][0-9][0-9]|2[0-4][0-9]|25[0-5])\.){2})([0-9]|[0-9][0-9]|[0-1][0-9][0-9]|2[0-4][0-9]|25[0-5])$|^((([0-9A-Fa-f]{1,4}:){1,5}:((25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?)|(([0-9A-Fa-f]{1,4}:){6,7}:)|(([0-9A-Fa-f]{1,4}:){6}((25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3}))|(([0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){5}(:[0-9A-Fa-f]{1,4}){1,2})|(([0-9A-Fa-f]{1,4}:){4}(:[0-9A-Fa-f]{1,4}(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?))|(([0-9A-Fa-f]{1,4}:){4}(:[0-9A-Fa-f]{1,4}){2,3})|((([0-9A-Fa-f]{1,4}:){3}(:[0-9A-Fa-f]{1,4}){1,2})(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?)|(([0-9A-Fa-f]{1,4}:){3}(:[0-9A-Fa-f]{1,4}){3,4})|(([0-9A-Fa-f]{1,4}:){2}(:[0-9A-Fa-f]{1,4}){1,3}(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?)|(([0-9A-Fa-f]{1,4}:){2}(:[0-9A-Fa-f]{1,4}){4,5})|(([0-9A-Fa-f]{1,4}:)(:[0-9A-Fa-f]{1,4}){1,4}(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?)|(([0-9A-Fa-f]{1,4}:)(:[0-9A-Fa-f]{1,4}){5,6})|((:(:[0-9A-Fa-f]{1,4}){1,5})(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?)|(:(:[0-9A-Fa-f]{1,4}){6,7})|(([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4})|(((::FFFF)|(0:0:0:0:0:FFFF))(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})))$|^(([a-zA-Z]|[0-9]*[a-zA-Z]*|[a-zA-Z][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z]|[A-Za-z][A-Za-z0-9\-]*[A-Za-z0-9])$|^ $</validValues>
+                </string>
+            </baseType>
+            <validationRules>
+                <rule exceptionText="Must be a valid Ipv4, Ipv6 or DNS address. Ipv4 Example 164.164.0.0 or Ipv6 Example 2001:0db8:85a3:0000:0000:8a2e:0370:7334 or DNS Example www.ericsson.com." format="posix_ere" name="Pattern Constraint"><![CDATA[^((([1-9]|[1-9][0-9]|12[012345689]|1[013456789][0-9]|2[0-1][0-9]|22[0-3])\.)(([0-9]|[0-9][0-9]|[0-1][0-9][0-9]|2[0-4][0-9]|25[0-5])\.){2})([0-9]|[0-9][0-9]|[0-1][0-9][0-9]|2[0-4][0-9]|25[0-5])$|^((([0-9A-Fa-f]{1,4}:){1,5}:((25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?)|(([0-9A-Fa-f]{1,4}:){6,7}:)|(([0-9A-Fa-f]{1,4}:){6}((25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3}))|(([0-9A-Fa-f]{1,4}:){6}:[0-9A-Fa-f]{1,4})|(([0-9A-Fa-f]{1,4}:){5}(:[0-9A-Fa-f]{1,4}){1,2})|(([0-9A-Fa-f]{1,4}:){4}(:[0-9A-Fa-f]{1,4}(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?))|(([0-9A-Fa-f]{1,4}:){4}(:[0-9A-Fa-f]{1,4}){2,3})|((([0-9A-Fa-f]{1,4}:){3}(:[0-9A-Fa-f]{1,4}){1,2})(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?)|(([0-9A-Fa-f]{1,4}:){3}(:[0-9A-Fa-f]{1,4}){3,4})|(([0-9A-Fa-f]{1,4}:){2}(:[0-9A-Fa-f]{1,4}){1,3}(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?)|(([0-9A-Fa-f]{1,4}:){2}(:[0-9A-Fa-f]{1,4}){4,5})|(([0-9A-Fa-f]{1,4}:)(:[0-9A-Fa-f]{1,4}){1,4}(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?)|(([0-9A-Fa-f]{1,4}:)(:[0-9A-Fa-f]{1,4}){5,6})|((:(:[0-9A-Fa-f]{1,4}){1,5})(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})?)|(:(:[0-9A-Fa-f]{1,4}){6,7})|(([0-9A-Fa-f]{1,4}:){7}[0-9A-Fa-f]{1,4})|(((::FFFF)|(0:0:0:0:0:FFFF))(:(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9]{1,2})){3})))$|^(([a-zA-Z]|[0-9]*[a-zA-Z]*|[a-zA-Z][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z]|[A-Za-z][A-Za-z0-9\-]*[A-Za-z0-9])$|^ $]]></rule>
+            </validationRules>
+        </derivedDataType>
+        <derivedDataType name="DateTime">
+            <description>Represents the international standard for the representation of date and time ( ISO 8601).
+                The string format is "YYYY-MM-DDThh:mm:ss.SSSZ" (excluding quotes).
+                A DateTime string consists of a date part, a time part, and an optional time zone information part. The time zone part may be a "Z", representing the Coordinated Universal Time (UTC) time zone (equals to +00) or a time zone offset (for example, +02:00).
+                If the time zone part is not present, the DateTime value represents local time.
+
+                The following pattern describes the DateTime format:
+                YYYY-MM-DDThh:mm:ss[.S+][Z|+-hh:mm]
+                Where:
+                YYYY = Four digit year
+                MM = Two digit month (01=January, and so on)
+                DD = Two digit day of month (01 through 31)
+                T = Time designator (shows start of time component)
+                hh = Two digits of hour (00 through 23, AM/PM not allowed)
+                mm = Two digits of minute (00 through 59)
+                ss = Two digits of second (00 through 59, leap second not allowed)
+                S+ = One or more digits of decimal fraction of a second
+                Z = Time is UTC
+                +- = + or - character indicating positive or negative offset to UTC
+
+                DateTime values are compliant with ISO 8601 "Representation of dates and times" but are restricted according to RFC 3339 "Date and Time on the Internet: Timestamps". The DateTime format is further restricted as follows:
+                - T and Z designators are upper case.
+                - . (dot) is used to indicate start of fractions of seconds (ISO 8601 also allows comma)</description>
+            <domainExtension domain="ECIM">
+                <extension name="originatingMimVersion" value="2"/>
+                <extension name="originatingMimRelease" value="7"/>
+                <extension name="originatingMimName" value="ECIM_CommonLibrary"/>
+            </domainExtension>
+            <baseType>
+                <string>
+                    <lengthRange>
+                        <min>19</min>
+                        <max>31</max>
+                    </lengthRange>
+                    <stringLength>
+                        <subrange>
+                            <min>19</min>
+                            <max>31</max>
+                        </subrange>
+                    </stringLength>
+                    <validValues>^([0-9]{4})-(1[0-2]|0[1-9])-(0[1-9]|[1|2][0-9]|3[0-1])T(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])([\.][0-9]+){0,1}(([\+|\-](0[0-9]|1[0-9]|2[0-4])(:[0-5][0-9])?)|(Z)?)$</validValues>
+                </string>
+            </baseType>
+            <validationRules>
+                <rule exceptionText="Must be of the format YYYY-MM-DDTHH:MM:SS[.S+][Z|+-hh:mm] where T separates the time and the date parts and Z indicates the time zone in relation to UTC. Example 2000-08-01T17:17:34.1+01:00." format="posix_ere" name="Pattern Constraint"><![CDATA[^([0-9]{4})-(1[0-2]|0[1-9])-(0[1-9]|[1|2][0-9]|3[0-1])T(0[0-9]|1[0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])([\.][0-9]+){0,1}(([\+|\-](0[0-9]|1[0-9]|2[0-4])(:[0-5][0-9])?)|(Z)?)$]]></rule>
+            </validationRules>
+        </derivedDataType>
+        <derivedDataType name="EcimPasswordString">
+            <description>This type enables secure handling of passwords.</description>
+            <baseType>
+                <string>
+                    <isPassphrase/>
+                </string>
+            </baseType>
+        </derivedDataType>
+        <derivedDataType name="ActionInvocationResult">
+            <description>This is the datatype for the Asychronous Action Id. </description>
+            <domainExtension domain="ECIM">
+                <extension name="originatingMimVersion" value="2"/>
+                <extension name="originatingMimRelease" value="7"/>
+                <extension name="originatingMimName" value="ECIM_CommonLibrary"/>
+            </domainExtension>
+            <baseType>
+                <uint16/>
+            </baseType>
+        </derivedDataType>
+        <derivedDataType name="LmPercentageType">
+            <description>Defines numeric data type with range 0..100 to express percentage.</description>
+            <baseType>
+                <uint8>
+                    <range>
+                        <min>0</min>
+                        <max>100</max>
+                    </range>
+                    <ranges>
+                        <subrange>
+                            <min>0</min>
+                            <max>100</max>
+                        </subrange>
+                    </ranges>
+                </uint8>
+            </baseType>
+        </derivedDataType>
+        <derivedDataType name="ECIM_LM_ArwaConfiguration_proxyServerPw">
+            <baseType>
+                <string>
+                    <isPassphrase/>
+                </string>
+            </baseType>
+        </derivedDataType>
+        <class name="Lm">
+            <description>Supports activities and contains information related to license management.</description>
+            <systemCreated/>
+            <root/>
+            <action name="refreshLicenseInventory">
+                <description>Initiates the synchronization of Managed Element's license inventory.&#13;
+                    &#13;
+                    Return value is true if the synchronization succeeded, otherwise false.</description>
+                <returnType>
+                    <boolean/>
+                </returnType>
+            </action>
+            <attribute name="lmId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="fingerprint">
+                <description>The unique identification of the Managed Element.</description>
+                <mandatory/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="fingerprintUpdateable">
+                <description>Indicates whether or not the fingerprint of the Managed Element can be updated.</description>
+                <readOnly/>
+                <dataType>
+                    <boolean/>
+                </dataType>
+            </attribute>
+            <attribute name="lmState">
+                <description>The current operational state of the License Manager.</description>
+                <readOnly/>
+                <dataType>
+                    <enumRef name="LmState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="lastInventoryChange">
+                <description>Date and time of the last change in the license inventory.&#13;
+                    &#13;
+                    Change in the license inventory may occur when the key file is updated on the Managed Element or when license information is refreshed by synchronizing with license servers.</description>
+                <readOnly/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="lastLicenseInventoryRefresh">
+                <description>Date and time when License Manager last synchronized the license inventory of the Managed Element.</description>
+                <readOnly/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="referenceToLicenseServer">
+                <description>Reference to the primary license server used by the License Manager.&#13;
+                    &#13;
+                    For instance, the reference can contain the IP address of the server or locate its configuration interface. The attribute value is NULL if the License Manager does not rely on any license server.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="FeatureKey">
+            <description>Key of a licensed feature that is available for the Managed Element.</description>
+            <systemCreated/>
+            <attribute name="featureKeyId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="state">
+                <description>State information for the feature associated with this key.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <moRef name="FeatureState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </moRef>
+                </dataType>
+            </attribute>
+            <attribute name="name">
+                <description>The name of the feature represented by the key.</description>
+                <readOnly/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="validFrom">
+                <description>The date and time from which the key is valid.</description>
+                <readOnly/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="expiration">
+                <description>The key expiry date and time.&#13;
+                    &#13;
+                    For perpetual keys, the value is NULL.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="shared">
+                <description>Indicates whether the key is shared among Managed Elements or dedicated to the Managed Element.&#13;
+                    &#13;
+                    A key is dedicated to the Managed Element if the key can be used only by the Managed Element. This is always the case when the ELIM format is used. A key can be shared among multiple Managed Elements if it is installed on a License Server to which multiple Managed Elements connect.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <boolean>
+                        <defaultValue>false</defaultValue>
+                    </boolean>
+                </dataType>
+            </attribute>
+            <attribute name="keyId">
+                <description>Identity of the feature under license control.&#13;
+                    &#13;
+                    E.g., CXC4011234, FAT1021234</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="productType">
+                <description>Identifier of the type of product to which the capacity is related.&#13;
+                    &#13;
+                    This attribute is used only in systems where the different applications use separate key files to identify which application or product the capacity belongs to, e.g. “SASN”, “GSN_GGSN”, “SSR 8000”.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="CapacityKey">
+            <description>Key of a licensed capacity that is available for the Managed Element.</description>
+            <systemCreated/>
+            <attribute name="capacityKeyId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="licensedCapacityLimit">
+                <description>Licensed capacity limit as defined in the installed key file.</description>
+                <readOnly/>
+                <dataType>
+                    <structRef name="LmCapacityValue">
+                        <mimName>OPTOFH_LM</mimName>
+                    </structRef>
+                </dataType>
+            </attribute>
+            <attribute name="capacityUnit">
+                <description>The licensed capacity measuring unit.</description>
+                <noNotification/>
+                <readOnly/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="grantedCapacityLevel">
+                <description>The capacity level currently granted by the License Manager.&#13;
+                    &#13;
+                    The attribute value is based on requests and releases of capacity units made by License Users. If such requests and releases are not made by License Users, the value of the attribute defaults to the licensed capacity limit. Note: The value of the attribute is not based on Performance Management data.&#13;
+                </description>
+                <readOnly/>
+                <dataType>
+                    <int32/>
+                </dataType>
+            </attribute>
+            <attribute name="licensedCapacityLimitReached">
+                <description>Indicates whether or not current capacity usage reaches the licensed capacity limit.</description>
+                <readOnly/>
+                <dataType>
+                    <boolean/>
+                </dataType>
+            </attribute>
+            <attribute name="state">
+                <description>State information for the capacity associated with this key.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <moRef name="CapacityState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </moRef>
+                </dataType>
+            </attribute>
+            <attribute name="name">
+                <description>The name of the feature represented by the key.</description>
+                <readOnly/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="validFrom">
+                <description>The date and time from which the key is valid.</description>
+                <readOnly/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="expiration">
+                <description>The key expiry date and time.&#13;
+                    &#13;
+                    For perpetual keys, the value is NULL.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="shared">
+                <description>Indicates whether the key is shared among Managed Elements or dedicated to the Managed Element.&#13;
+                    &#13;
+                    A key is dedicated to the Managed Element if the key can be used only by the Managed Element. This is always the case when the ELIM format is used. A key can be shared among multiple Managed Elements if it is installed on a License Server to which multiple Managed Elements connect.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <boolean>
+                        <defaultValue>false</defaultValue>
+                    </boolean>
+                </dataType>
+            </attribute>
+            <attribute name="keyId">
+                <description>Identity of the feature under license control.&#13;
+                    &#13;
+                    E.g., CXC4011234, FAT1021234</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="productType">
+                <description>Identifier of the type of product to which the capacity is related.&#13;
+                    &#13;
+                    This attribute is used only in systems where the different applications use separate key files to identify which application or product the capacity belongs to, e.g. “SASN”, “GSN_GGSN”, “SSR 8000”.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="EmergencyUnlock">
+            <description>Emergency Unlock state information.</description>
+            <systemCreated/>
+            <action name="activate">
+                <description>Initiates activation of the Emergency Unlock operational mode.&#13;
+                    &#13;
+                    Return value is true if the activation succeeded, otherwise false.</description>
+                <returnType>
+                    <boolean/>
+                </returnType>
+            </action>
+            <attribute name="emergencyUnlockId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="activationState">
+                <description>Activation state of Emergency Unlock.</description>
+                <readOnly/>
+                <dataType>
+                    <enumRef name="LmActivationState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="expiration">
+                <description>Expiry date and time of Emergency Unlock.&#13;
+                    &#13;
+                    The value is NULL if the activation state is INACTIVE.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="activationsLeft">
+                <description>Remaining allowed Emergency Unlock activations left.</description>
+                <readOnly/>
+                <dataType>
+                    <uint8/>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="IntegrationUnlock">
+            <description>Integration Unlock state information.</description>
+            <systemCreated/>
+            <action name="activate">
+                <description>Initiates activation of the Integration Unlock operational mode.&#13;
+                    &#13;
+                    Return value is true if the activation succeeded, otherwise false.</description>
+                <returnType>
+                    <boolean/>
+                </returnType>
+            </action>
+            <attribute name="integrationUnlockId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="activationState">
+                <description>Activation state of Integration Unlock.</description>
+                <readOnly/>
+                <dataType>
+                    <enumRef name="LmActivationState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="expiration">
+                <description>Expiry date and time of Integration Unlock.&#13;
+                    &#13;
+                    The value is NULL if the activation state is INACTIVE.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="activationsLeft">
+                <description>Remaining allowed Integration Unlock activations left.</description>
+                <readOnly/>
+                <dataType>
+                    <uint8/>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="MaintenanceUnlock">
+            <description>Maintenance Unlock state information.</description>
+            <systemCreated/>
+            <action name="activate">
+                <description>Initiates activation of the Maintenance Unlock operational mode.&#13;
+                    &#13;
+                    Return value is true if the activation succeeded, otherwise false.</description>
+                <returnType>
+                    <boolean/>
+                </returnType>
+            </action>
+            <attribute name="maintenanceUnlockId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="activationState">
+                <description>Maintenance Unlock activation state.</description>
+                <readOnly/>
+                <dataType>
+                    <enumRef name="LmActivationState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="expiration">
+                <description>Expiry date and time of Maintenance Unlock.&#13;
+                    &#13;
+                    The value is NULL if the activation state is INACTIVE.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="activationsLeft">
+                <description>Remaining allowed Maintenance Unlock activations left.</description>
+                <readOnly/>
+                <dataType>
+                    <uint8/>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="SystemTriggeredUnlock">
+            <description>System Triggered Unlock state information.</description>
+            <systemCreated/>
+            <attribute name="systemTriggeredUnlockId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="activationState">
+                <description>System Triggered Unlock activation state.</description>
+                <readOnly/>
+                <dataType>
+                    <enumRef name="LmActivationState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="expiration">
+                <description>Expiry date and time of System Triggered Unlock.&#13;
+                    &#13;
+                    The value is NULL if the activation state is INACTIVE.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="AutonomousMode">
+            <description>Autonomous Mode state information.</description>
+            <systemCreated/>
+            <attribute name="autonomousModeId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="activationState">
+                <description>Autonomous Mode activation state.</description>
+                <readOnly/>
+                <dataType>
+                    <enumRef name="LmActivationState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="expiration">
+                <description>Expiry date and time of Autonomous Mode.&#13;
+                    &#13;
+                    The value is NULL if the activation state is INACTIVE.</description>
+                <readOnly/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="GracePeriod">
+            <description>Grace period information of the associated capacity.</description>
+            <systemCreated/>
+            <attribute name="gracePeriodId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="gracePeriodState">
+                <description>Grace period state of the capacity.</description>
+                <readOnly/>
+                <dataType>
+                    <enumRef name="LmActivationState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="gracePeriodExpiration">
+                <description>Expiry date and time of the grace period.&#13;
+                    &#13;
+                    The value is NULL if grace-period state is inactive.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="KeyFileManagement">
+            <description>Enables installation of key files and provides information about the installed key file.</description>
+            <systemCreated/>
+            <action name="installKeyFile">
+                <description>Initiates the key file installation defined by the URI given as a parameter.&#13;
+                    &#13;
+                    The return value is the action Id if the initiation succeeded, otherwise it is 0.&#13;
+                    &#13;
+                    The installation is an asynchronous operation. Progress is reported via attribute reportProgress.</description>
+                <returnType>
+                    <uint16/>
+                </returnType>
+                <parameter name="uri">
+                    <description>The URI of the key file that is to be installed.&#13;
+                        &#13;
+                        The URI may refer to a local (e.g., file:///data/dir/subdir/rbs006.xml) or to a remote (e.g., sftp://myuser@myhostname.ericsson.local/dir/subdir/rbs006.xml) file.&#13;
+                        &#13;
+                        If user name is needed to access the referenced file then the URI shall include the user name. The URI must not contain password.&#13;
+                        &#13;
+                        The generic URI syntax is defined by RFC 2396.</description>
+                    <in/>
+                    <dataType>
+                        <string/>
+                    </dataType>
+                </parameter>
+                <parameter name="password">
+                    <description>Password to access the referenced file.&#13;
+                        &#13;
+                        If  authentication is not password based, this parameter will be ignored.&#13;
+                    </description>
+                    <in/>
+                    <dataType>
+                        <derivedDataTypeRef name="EcimPasswordString">
+                            <mimName>OPTOFH_LM</mimName>
+                        </derivedDataTypeRef>
+                    </dataType>
+                </parameter>
+            </action>
+            <attribute name="keyFileManagementId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="reportProgress">
+                <description>Reference to the progress report including the result of the initiated key file installation.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <structRef name="AsyncActionProgress">
+                        <mimName>OPTOFH_LM</mimName>
+                    </structRef>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="KeyFileInformation">
+            <description>Basic information about the key file installed on the Managed Element.</description>
+            <systemCreated/>
+            <attribute name="keyFileInformationId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="sequenceNumber">
+                <description>Sequence number of the key file.&#13;
+                    &#13;
+                    If sequence number is not available, this value is 0.&#13;
+                </description>
+                <readOnly/>
+                <dataType>
+                    <int32/>
+                </dataType>
+            </attribute>
+            <attribute name="installationTime">
+                <description>Date and time when key file was installed on the Managed Element.</description>
+                <readOnly/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="locatable">
+                <description>Indicates whether or not the key file can currently be located.</description>
+                <readOnly/>
+                <dataType>
+                    <boolean/>
+                </dataType>
+            </attribute>
+            <attribute name="productType">
+                <description>Identifier of the product type to which the capacity is related.&#13;
+                    &#13;
+                    This attribute is used only in systems where different applications use separate key files to identify to which application or product the capacity belongs, e.g: SASN, GSN_GGSN, or SSR 8000.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="WarningThreshold">
+            <description>Warning threshold information of the associated capacity.</description>
+            <systemCreated/>
+            <attribute name="warningThresholdId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="warningThreshold">
+                <description>Defines the capacity usage level at which an alarm is raised.&#13;
+                    &#13;
+                    The threshold is expressed in terms of percentage in range 0-100, where 90 is default value.</description>
+                <dataType>
+                    <derivedDataTypeRef name="LmPercentageType">
+                        <defaultValue>90</defaultValue>
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="warningThresholdReached">
+                <description>Indicates whether or not current capacity usage reaches warning threshold.</description>
+                <readOnly/>
+                <dataType>
+                    <boolean>
+                        <defaultValue>false</defaultValue>
+                    </boolean>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="FeatureState">
+            <description>This MO class defines different licensing-related states of a feature.</description>
+            <systemCreated/>
+            <attribute name="featureStateId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="featureState">
+                <description>Indicates whether or not the feature license is administratively activated.</description>
+                <dataType>
+                    <enumRef name="LmFeatureState">
+                        <defaultValue>DEACTIVATED</defaultValue>
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="licenseState">
+                <description>Indicates whether or not a valid license key enables the feature usage.</description>
+                <readOnly/>
+                <dataType>
+                    <enumRef name="LmLicenseState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="serviceState">
+                <description>Indicates whether or not the feature is able to provide its service from a license perspective.&#13;
+                    &#13;
+                    The value of serviceState is derived from featureState and licenseState. If featureState is ACTIVATED and licenseState is ENABLED, serviceState is OPERABLE. In all other cases, serviceState is INOPERABLE.</description>
+                <readOnly/>
+                <dataType>
+                    <enumRef name="LmServiceState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="description">
+                <description>The description of the feature.</description>
+                <readOnly/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="featureKey">
+                <description>Key instances associated with this feature.</description>
+                <readOnly/>
+                <dataType>
+                    <sequence>
+                        <moRef name="FeatureKey">
+                            <mimName>OPTOFH_LM</mimName>
+                        </moRef>
+                        <minLength>0</minLength>
+                        <nonUnique/>
+                    </sequence>
+                </dataType>
+            </attribute>
+            <attribute name="keyId">
+                <description>Identity of the feature under license control.&#13;
+                    &#13;
+                    E.g., CXC4011234, FAT1021234</description>
+                <readOnly/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="CapacityState">
+            <description>States of capacities that are supported by a Managed Element.</description>
+            <systemCreated/>
+            <attribute name="capacityStateId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="licenseState">
+                <description>Indicates whether or not a valid license key enables the capacity usage.</description>
+                <readOnly/>
+                <dataType>
+                    <enumRef name="LmLicenseState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="description">
+                <description>The description of the capacity.</description>
+                <readOnly/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="capacityKey">
+                <description>Key instances associated with this capacity.</description>
+                <readOnly/>
+                <dataType>
+                    <sequence>
+                        <moRef name="CapacityKey">
+                            <mimName>OPTOFH_LM</mimName>
+                        </moRef>
+                        <minLength>0</minLength>
+                        <nonUnique/>
+                    </sequence>
+                </dataType>
+            </attribute>
+            <attribute name="keyId">
+                <description>Identity of the feature under license control.&#13;
+                    &#13;
+                    E.g., CXC4011234, FAT1021234</description>
+                <readOnly/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="currentCapacityLimit">
+                <description>Licensed capacity limit as defined by the currently valid license key.</description>
+                <readOnly/>
+                <dataType>
+                    <structRef name="LmCapacityValue">
+                        <mimName>OPTOFH_LM</mimName>
+                    </structRef>
+                </dataType>
+            </attribute>
+            <attribute name="capacityUnit">
+                <description>The licensed capacity measuring unit.</description>
+                <noNotification/>
+                <readOnly/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="grantedCapacityLevel">
+                <description>The capacity level currently granted by the License Manager.&#13;
+                    &#13;
+                    The attribute value is based on requests and releases of capacity units made by License Users. If such requests and releases are not made by License Users, the value of the attribute defaults to the licensed capacity limit. Note: The value of the attribute is not based on Performance Management data.&#13;
+                </description>
+                <readOnly/>
+                <dataType>
+                    <int32/>
+                </dataType>
+            </attribute>
+            <attribute name="licensedCapacityLimitReached">
+                <description>Indicates whether or not current capacity usage reaches the licensed capacity limit.</description>
+                <readOnly/>
+                <dataType>
+                    <boolean/>
+                </dataType>
+            </attribute>
+            <attribute name="featureState">
+                <description>Feature State for the new optional capacity licenses.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <enumRef name="LmFeatureState">
+                        <defaultValue>DEACTIVATED</defaultValue>
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="serviceState">
+                <description>Service State for the new optional capacity licenses.&#13;
+                </description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <enumRef name="LmServiceState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="NeLSConfiguration">
+            <description>Network License Server (NeLS) configuration parameters.</description>
+            <attribute name="neLSConfigurationId">
+                <description>The value component of the RDN.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="host">
+                <description>IPv6, IPv4 or DNS name.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <derivedDataTypeRef name="IpDNSAddress">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="port">
+                <description>The port number that is used to connect to NeLS.&#13;
+                </description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <uint16>
+                        <defaultValue>0</defaultValue>
+                    </uint16>
+                </dataType>
+            </attribute>
+            <attribute name="connectionStatus">
+                <description>Represents status of the connection toward NeLS.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <enumRef name="NeLSConnectionStatus">
+                        <defaultValue>UNDEFINED</defaultValue>
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="swltId">
+                <description>Software License Target Id that is needed for NeLS along with Customer id to select a corresponding License key File</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="customerId">
+                <description>Customer Identity needed for NeLS to select a corresponding License key File.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="secondaryHost">
+                <description>IPv6, IPv4 or DNS name.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <derivedDataTypeRef name="IpDNSAddress">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="connectionTimeout">
+                <description>The socket connection timeout value in number of seconds that is used to connect to NeLS.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <uint16/>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="ArwaConfiguration">
+            <description>Enables configuration of the Arwa server connection properties.</description>
+            <action name="installCustomerMetadataFile">
+                <description>Initiates the installation of the Client Metadata file defined by the URI given as parameter.&#13;
+                    &#13;
+                    e.g. installClientMetadataFile file:///tmp/clientMetadata.xml&#13;
+                    &#13;
+                    Return value is TRUE in case the initiation succeeded or FALSE otherwise.&#13;
+                    &#13;
+                    &#13;
+                </description>
+                <returnType>
+                    <uint16/>
+                </returnType>
+                <parameter name="uri">
+                    <description>The URI of the metadatafile file that is to be installed.&#13;
+                        &#13;
+                        The URI may refer to a local (e.g., file:///data/dir/subdir/rbs006.xml) or to a remote (e.g., sftp://myuser@myhostname.ericsson.local/dir/subdir/rbs006.xml) file.&#13;
+                        &#13;
+                        If user name is needed to access the referenced file then the URI shall include the user name. &#13;
+                        &#13;
+                        The URI must not contain password.&#13;
+                        &#13;
+                        The generic URI syntax is defined by RFC 2396.&#13;
+                    </description>
+                    <in/>
+                    <dataType>
+                        <string/>
+                    </dataType>
+                </parameter>
+                <parameter name="password">
+                    <description>Password to access the referenced file.&#13;
+                        &#13;
+                        If  authentication is not password based, this parameter will be ignored.&#13;
+                    </description>
+                    <in/>
+                    <dataType>
+                        <derivedDataTypeRef name="EcimPasswordString">
+                            <mimName>OPTOFH_LM</mimName>
+                        </derivedDataTypeRef>
+                    </dataType>
+                </parameter>
+            </action>
+            <action name="createUsageReport">
+                <description>createUsageReport.&#13;
+                    To be used as:&#13;
+                    createUsageReport URI startDate endDate [filter-reg-ex]&#13;
+                    i.e.&#13;
+                    createUsageReport /tmp/myUsageReport 2015-03-01 2015-03-15</description>
+                <returnType>
+                    <boolean/>
+                </returnType>
+                <parameter name="uri">
+                    <description>URI for destination of the usage report.</description>
+                    <in/>
+                    <dataType>
+                        <string/>
+                    </dataType>
+                </parameter>
+                <parameter name="startDate">
+                    <description>StartDate for the period of the usage report.</description>
+                    <in/>
+                    <dataType>
+                        <string/>
+                    </dataType>
+                </parameter>
+                <parameter name="endDate">
+                    <description>End date for the period of the usage report.</description>
+                    <in/>
+                    <dataType>
+                        <string/>
+                    </dataType>
+                </parameter>
+                <parameter name="filter">
+                    <description>Usage.&#13;
+                        filter-reg-ex An optional filter to customize the usage report. e.g. license=FAT123</description>
+                    <in/>
+                    <dataType>
+                        <string/>
+                    </dataType>
+                </parameter>
+            </action>
+            <action name="connectToArwa">
+                <description>connectToArwa will provide the action id result if the invocation is successful.&#13;
+                </description>
+                <returnType>
+                    <int64/>
+                </returnType>
+            </action>
+            <attribute name="arwaConfigurationId">
+                <description>Holds the name used when identifying the MO.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="referenceToProxyServer">
+                <description>Identifies the uri address to be used for the proxy server.&#13;
+                    &#13;
+                    &#13;
+                    i.e. "https://proxy.foo.com:8080"</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="proxyServerUser">
+                <description>Username  for the optional  proxy server used  to connect to  Arwa.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="proxyServerPw">
+                <description>Password for the optional proxy server used to connect to Arwa.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <derivedDataTypeRef name="ECIM_LM_ArwaConfiguration_proxyServerPw">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="proxyServerType">
+                <description>Proxy server type to be used, can be MANUAL or AUTOMATIC.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <enumRef name="LmArwaProxyServerType">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="licenseServerLastSuccessfulConnectTime">
+                <description>Last time of successful connection.&#13;
+                    &#13;
+                    i.e. “Fri, Dec 19, 2014 12:41:39 PM”</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <derivedDataTypeRef name="DateTime">
+                        <mimName>OPTOFH_LM</mimName>
+                    </derivedDataTypeRef>
+                </dataType>
+            </attribute>
+            <attribute name="customerName">
+                <description>Name of the current customer.&#13;
+                    &#13;
+                    (e.g. Customer1)</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="maxAggregationFileSize">
+                <description>To define the maximum size of aggregation files in Kilobytes. &#13;
+                    If set to NULL there will be no files created (Turned off).</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <uint32>
+                        <defaultValue>1024</defaultValue>
+                    </uint32>
+                </dataType>
+            </attribute>
+            <attribute name="maxNumberOfIntermediaryAggregationFiles">
+                <description>Maximum number of the intermediary aggregation files to be used by the report tool.</description>
+                <dataType>
+                    <uint32>
+                        <defaultValue>100</defaultValue>
+                    </uint32>
+                </dataType>
+            </attribute>
+            <attribute name="arwaLicenseServerConnectionType">
+                <description>Type of connectivity for the Proxy server, can be PERMANENT or INTERMITTENT.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <enumRef name="LmArwaServerConnectionType">
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+            <attribute name="reportProgress">
+                <description>Reports if the Arwa connection was successful or not.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <readOnly/>
+                <isNillable/>
+                <dataType>
+                    <structRef name="AsyncActionProgress">
+                        <mimName>OPTOFH_LM</mimName>
+                    </structRef>
+                </dataType>
+            </attribute>
+            <attribute name="licenseServerPlannedConnectEvent">
+                <description>Next Schedule for a  planned connection to the Arwa server. &#13;
+                    NULL if it is PERMANENT connection </description>
+                <readOnly/>
+                <dataType>
+                    <sequence>
+                        <derivedDataTypeRef name="DateTime">
+                            <mimName>OPTOFH_LM</mimName>
+                        </derivedDataTypeRef>
+                        <minLength>0</minLength>
+                        <nonUnique/>
+                    </sequence>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="NetworkOperatorCertificate">
+            <description>Specifies the Operator layer nodeCredential and trustCategory from CertM MO for Nels communication.</description>
+            <attribute name="networkOperatorCertificateId">
+                <description>The key attribute for NetworkOperatorCertificate moc.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="nodeCredential">
+                <description>Specifies the DN of a NodeCredential MO in Certificate Management.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <moRef name="ManagedObject"/>
+                </dataType>
+            </attribute>
+            <attribute name="trustCategory">
+                <description>Specifies the DN of a TrustCategory MO in Certificate Management.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <moRef name="ManagedObject"/>
+                </dataType>
+            </attribute>
+        </class>
+        <class name="ApplicationInfo">
+            <description>Contains parameters to control Application Information reporting to NeLS.</description>
+            <attribute name="applicationInfoId">
+                <description>Key attribute of the ApplicationInfo class.</description>
+                <mandatory/>
+                <noNotification/>
+                <restricted/>
+                <key/>
+                <dataType>
+                    <string/>
+                </dataType>
+            </attribute>
+            <attribute name="port">
+                <description>The port number that is used to connect to application reporting interface to NeLS.</description>
+                <domainExtension domain="ECIM">
+                    <extension name="isNillable" value="true"/>
+                </domainExtension>
+                <isNillable/>
+                <dataType>
+                    <uint16>
+                        <defaultValue>0</defaultValue>
+                    </uint16>
+                </dataType>
+            </attribute>
+            <attribute name="administrativeState">
+                <description>Locks or unlocks the feature, reporting application information to NeLS.</description>
+                <dataType>
+                    <enumRef name="AdmState">
+                        <defaultValue>LOCKED</defaultValue>
+                        <mimName>OPTOFH_LM</mimName>
+                    </enumRef>
+                </dataType>
+            </attribute>
+        </class>
+        <relationship name="Lm_to_CapacityKey">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="CapacityKey">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="Lm_to_FeatureKey">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="FeatureKey">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="Lm_to_EmergencyUnlock">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="EmergencyUnlock">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>1</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="Lm_to_IntegrationUnlock">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="IntegrationUnlock">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="Lm_to_MaintenanceUnlock">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="MaintenanceUnlock">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="Lm_to_SystemTriggeredUnlock">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="SystemTriggeredUnlock">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="Lm_to_AutonomousMode">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="AutonomousMode">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="CapacityKey_to_GracePeriod">
+            <deprecated/>
+            <statusInformation>GracePeriod should be associated to CapacityState.</statusInformation>
+            <containment>
+                <parent>
+                    <hasClass name="CapacityKey">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="GracePeriod">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="Lm_to_KeyFileManagement">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="KeyFileManagement">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="KeyFileManagement_to_KeyFileInformation">
+            <containment>
+                <parent>
+                    <hasClass name="KeyFileManagement">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="KeyFileInformation">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="CapacityKey_to_WarningThreshold">
+            <deprecated/>
+            <statusInformation>WarningThreshold should be associated to CapacityState.</statusInformation>
+            <containment>
+                <parent>
+                    <hasClass name="CapacityKey">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="WarningThreshold">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="Lm_to_CapacityState">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="CapacityState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="FeatureKey_to_FeatureState">
+            <biDirectionalAssociation>
+                <associationEnd name="featureKey">
+                    <hasClass name="FeatureKey">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                    </cardinality>
+                </associationEnd>
+                <associationEnd name="state">
+                    <hasClass name="FeatureState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </associationEnd>
+            </biDirectionalAssociation>
+        </relationship>
+        <relationship name="CapacityKey_to_CapacityState">
+            <biDirectionalAssociation>
+                <associationEnd name="capacityKey">
+                    <hasClass name="CapacityKey">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                    </cardinality>
+                </associationEnd>
+                <associationEnd name="state">
+                    <hasClass name="CapacityState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </associationEnd>
+            </biDirectionalAssociation>
+        </relationship>
+        <relationship name="Lm_to_FeatureState">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="FeatureState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="CapacityState_to_WarningThreshold">
+            <containment>
+                <parent>
+                    <hasClass name="CapacityState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="WarningThreshold">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="CapacityState_to_GracePeriod">
+            <containment>
+                <parent>
+                    <hasClass name="CapacityState">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="GracePeriod">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+        <relationship name="Lm_to_NeLSConfiguration">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="NeLSConfiguration">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="true"/>
+                    <extension name="canDelete" value="true"/>
+                </domainExtension>
+            </containment>
+        </relationship>
+        <relationship name="Lm_to_ArwaConfiguration">
+            <containment>
+                <parent>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="ArwaConfiguration">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="true"/>
+                    <extension name="canDelete" value="true"/>
+                </domainExtension>
+            </containment>
+        </relationship>
+        <relationship name="NeLSConfiguration_to_ApplicationInfo">
+            <containment>
+                <parent>
+                    <hasClass name="NeLSConfiguration">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="ApplicationInfo">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="true"/>
+                    <extension name="canDelete" value="true"/>
+                </domainExtension>
+            </containment>
+        </relationship>
+        <relationship name="NeLSConfiguration_to_NetworkOperatorCertificate">
+            <containment>
+                <parent>
+                    <hasClass name="NeLSConfiguration">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="NetworkOperatorCertificate">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="true"/>
+                    <extension name="canDelete" value="true"/>
+                </domainExtension>
+            </containment>
+        </relationship>
+        <relationship name="ApplicationInfo_to_NetworkOperatorCertificate">
+            <containment>
+                <parent>
+                    <hasClass name="ApplicationInfo">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="NetworkOperatorCertificate">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>0</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="true"/>
+                    <extension name="canDelete" value="true"/>
+                </domainExtension>
+            </containment>
+        </relationship>
+    </mim>
+    <interMim>
+        <relationship name="SystemFunctions_to_Lm">
+            <containment>
+                <parent>
+                    <hasClass name="SystemFunctions">
+                        <mimName>ECIM_Top</mimName>
+                    </hasClass>
+                </parent>
+                <child>
+                    <hasClass name="Lm">
+                        <mimName>OPTOFH_LM</mimName>
+                    </hasClass>
+                    <cardinality>
+                        <min>1</min>
+                        <max>1</max>
+                    </cardinality>
+                </child>
+                <domainExtension domain="ECIM">
+                    <extension name="canCreate" value="false"/>
+                    <extension name="canDelete" value="false"/>
+                </domainExtension>
+                <notCreatable/>
+                <notDeleteable/>
+            </containment>
+        </relationship>
+    </interMim>
+</models>
